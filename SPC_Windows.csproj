@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97320850-F053-4507-AE9E-7D5F08E41553}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SPC_Windows</RootNamespace>
+    <AssemblyName>SPC_Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SPC_Windows.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="halcondotnetxl">
+      <HintPath>..\Vision2\Dll\halcondotnetxl.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Vision2\Dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Vision2\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\Vision2\Dll\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\Vision2\Dll\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\Vision2\Dll\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\Vision2\Dll\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Excel\Npoi.cs" />
+    <Compile Include="HtmlMaker\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HtmlMaker\Html.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Project\CsvParsingHelper.cs" />
+    <Compile Include="Project\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\ProjectINI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPCFile\TrayData.cs" />
+    <Compile Include="SPCFile\CRDNGTextTime.cs" />
+    <Compile Include="SPCFile\DataMinMax.cs" />
+    <Compile Include="SQL\MySqlHelper.cs" />
+    <Compile Include="SQL\SQLSeverHelper.cs" />
+    <Compile Include="UI\Channel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Channel.Designer.cs">
+      <DependentUpon>Channel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChartEX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ControlExtensions.cs" />
+    <Compile Include="UI\DataGridViewF\cModule.cs" />
+    <Compile Include="UI\DataGridViewF\DataGridViewComboBoxColumnEx.cs" />
+    <Compile Include="UI\DataGridViewF\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DataGridViewF\DataGridViewNumericUpDownCell.cs" />
+    <Compile Include="UI\DataGridViewF\DataGridViewNumericUpDownColumn.cs" />
+    <Compile Include="UI\DataGridViewF\DataGridViewNumericUpDownEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DataGridViewF\DetailControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\DataGridViewF\MasterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ErosDynamic.cs" />
+    <Compile Include="UI\FormText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormText.Designer.cs">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FrameControl.Designer.cs">
+      <DependentUpon>FrameControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GroupBoxFile\GroupBoxEX1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Iamage\ImageListEX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Iamage\ImageListEX.Designer.cs">
+      <DependentUpon>ImageListEX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OpenFileSiez.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\OpenFileSiez.Designer.cs">
+      <DependentUpon>OpenFileSiez.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PictureBoxEX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrid\Class1.cs" />
+    <Compile Include="UI\PropertyGrid\DictionaryAddPG.cs" />
+    <Compile Include="UI\PropertyGrid\ErosConverter.cs" />
+    <Compile Include="UI\PropertyGrid\ExportAttribute.cs" />
+    <Compile Include="UI\PropertyGrid\ListStringEditorControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrid\ListStringEditorControl.Designer.cs">
+      <DependentUpon>ListStringEditorControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PropertyGrid\MyControlAttibute.cs" />
+    <Compile Include="UI\PropertyGrid\MyPropertyGrid .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\PropertyGrid\PageTypeEditor_FolderBrowserDialog.cs" />
+    <Compile Include="UI\PropertyGrid\PageTypeEditor_OpenFileDialog.cs" />
+    <Compile Include="UI\PropertyGrid\PropertyOrderPair.cs" />
+    <Compile Include="UI\RealTimeImageMaker.cs" />
+    <Compile Include="UI\RichTextBoxExtension.cs" />
+    <Compile Include="UI\StaticCon.cs" />
+    <Compile Include="UI\TabControl\DrawTabControl.cs" />
+    <Compile Include="UI\TabControl\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStripCheckbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStripComboBoxEX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStripDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStripPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\ToolStripTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\ToolStrip\TSButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\trackBarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\trackBarControl.Designer.cs">
+      <DependentUpon>trackBarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\treeViewEX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\TreeView\CTreeTaskBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UIConcs.cs" />
+    <Compile Include="Vision\HimageHSVRGB.cs" />
+    <Compile Include="Vision\Halcon3DModel.cs" />
+    <Compile Include="SPCFile\OneResultOBj.cs" />
+    <Compile Include="Vision\RModelHomMat.cs" />
+    <Compile Include="Vision\MassageText.cs" />
+    <Compile Include="SPCFile\OneRObj.cs" />
+    <Compile Include="SPCFile\OneCompOBJs.cs" />
+    <Compile Include="SPCFile\OneDataVale.cs" />
+    <Compile Include="SPCFile\OneCamData.cs" />
+    <Compile Include="SPCFile\ComponentNumber.cs" />
+    <Compile Include="SPCFile\DefectType.cs" />
+    <Compile Include="SPCFile\FilesHelper.cs" />
+    <Compile Include="SPCFile\MControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SPCFile\MControl1.Designer.cs">
+      <DependentUpon>MControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPCFile\OKNumberClass.cs" />
+    <Compile Include="SPCFile\ProductSPCControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SPCFile\ProductSPCControl.designer.cs">
+      <DependentUpon>ProductSPCControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPCFile\SPC.cs" />
+    <Compile Include="SPCFile\SPCData.cs" />
+    <Compile Include="SPCFile\SPCForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SPCFile\SPCForm1.Designer.cs">
+      <DependentUpon>SPCForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SPCFile\SPCOneDataVale.cs" />
+    <Compile Include="Vision\HWindID.cs" />
+    <EmbeddedResource Include="HtmlMaker\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SPCFile\MControl1.resx">
+      <DependentUpon>MControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPCFile\ProductSPCControl.resx">
+      <DependentUpon>ProductSPCControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPCFile\SPCForm1.resx">
+      <DependentUpon>SPCForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Channel.resx">
+      <DependentUpon>Channel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataGridViewF\MasterControl.resx">
+      <DependentUpon>MasterControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormText.resx">
+      <DependentUpon>FormText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Iamage\ImageListEX.resx">
+      <DependentUpon>ImageListEX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OpenFileSiez.resx">
+      <DependentUpon>OpenFileSiez.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PropertyGrid\ListStringEditorControl.resx">
+      <DependentUpon>ListStringEditorControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TabControl\TabControlEx.resx">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\trackBarControl.resx">
+      <DependentUpon>trackBarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
